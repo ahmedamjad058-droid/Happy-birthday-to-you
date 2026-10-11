@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#04060f">
+<title>Happy Birthday Baba Jaan ❤️</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<canvas id="fx" aria-hidden="true"></canvas>
+
+<button id="musicBtn" class="music" type="button" aria-pressed="false" aria-label="Turn music on or off">
+  <span class="eq" aria-hidden="true"><i></i><i></i><i></i></span>
+  <span class="lbl">Music Off</span>
+</button>
+
+<main class="stage">
+  <header class="head">
+    <h1 class="title rise" style="--t:.2s">
+      <span class="gold script">Happy Birthday</span>
+      <span class="name-row"><span class="gold name">Baba Jaan</span> <span class="heart" aria-hidden="true">❤️</span></span>
+    </h1>
+    <p class="date rise" style="--t:.5s"><span></span>10th October 2026<span></span></p>
+  </header>
+
+  <div class="cake-wrap" id="cakeWrap">
+    <div class="wish script" id="wish" aria-live="polite">Make a wish ✨</div>
+    <svg class="cake" id="cake" viewBox="0 8 400 340" role="img" aria-label="A three-tier birthday cake with glowing candles">
+      <defs>
+        <linearGradient id="gold"><stop offset="0" stop-color="#9a7420"/><stop offset=".3" stop-color="#fff1b8"/><stop offset=".6" stop-color="#d4a93f"/><stop offset="1" stop-color="#8a6518"/></linearGradient>
+        <linearGradient id="blueSide"><stop offset="0" stop-color="#071a52"/><stop offset=".3" stop-color="#2f5bd6"/><stop offset=".6" stop-color="#1b3f9e"/><stop offset="1" stop-color="#06143f"/></linearGradient>
+        <linearGradient id="creamSide"><stop offset="0" stop-color="#c9bb9c"/><stop offset=".35" stop-color="#fffaf0"/><stop offset=".7" stop-color="#eadfc4"/><stop offset="1" stop-color="#bfae8c"/></linearGradient>
+        <linearGradient id="creamTop" x2="0" y2="1"><stop offset="0" stop-color="#fffdf6"/><stop offset="1" stop-color="#efe2c4"/></linearGradient>
+        <linearGradient id="plateIn" x2="0" y2="1"><stop offset="0" stop-color="#0d2466"/><stop offset="1" stop-color="#050c26"/></linearGradient>
+        <linearGradient id="candleG"><stop offset="0" stop-color="#e3d3ad"/><stop offset=".45" stop-color="#fff8e8"/><stop offset="1" stop-color="#d8c79f"/></linearGradient>
+        <linearGradient id="flameG" x2="0" y2="1"><stop offset="0" stop-color="#ff8f1f"/><stop offset=".55" stop-color="#ffd35c"/><stop offset="1" stop-color="#fff6c8"/></linearGradient>
+        <radialGradient id="glowG"><stop offset="0" stop-color="#ffd978" stop-opacity=".6"/><stop offset="1" stop-color="#ffb347" stop-opacity="0"/></radialGradient>
+        <path id="hrt" d="M0 5 C-9 -2 -7 -10 0 -5 C7 -10 9 -2 0 5Z"/>
+      </defs>
+
+      <g class="tier" style="--k:0">
+        <ellipse cx="200" cy="320" rx="184" ry="22" fill="#000" opacity=".35"/>
+        <ellipse cx="200" cy="312" rx="174" ry="24" fill="url(#gold)"/>
+        <ellipse cx="200" cy="310" rx="160" ry="20" fill="url(#plateIn)"/>
+      </g>
+
+      <g class="tier" style="--k:1">
+        <path d="M70 222 v82 a130 24 0 0 0 260 0 v-82z" fill="url(#blueSide)"/>
+        <ellipse cx="200" cy="222" rx="130" ry="24" fill="url(#creamTop)" stroke="url(#gold)" stroke-width="1.5"/>
+        <path d="M70 262 a130 24 0 0 0 260 0" fill="none" stroke="url(#gold)" stroke-width="3"/>
+        <path d="M70 262 a130 24 0 0 0 260 0" fill="none" stroke="#fff4cf" stroke-width="5" stroke-dasharray="0 11" stroke-linecap="round"/>
+      </g>
+
+      <g class="tier" style="--k:2">
+        <path d="M105 154 v68 a95 18 0 0 0 190 0 v-68z" fill="url(#creamSide)"/>
+        <ellipse cx="200" cy="154" rx="95" ry="18" fill="url(#creamTop)" stroke="url(#gold)" stroke-width="1.5"/>
+        <path d="M105 196 a95 18 0 0 0 190 0" fill="none" stroke="url(#gold)" stroke-width="3"/>
+        <g fill="#d4a93f">
+          <use href="#hrt" x="145" y="185"/><use href="#hrt" x="172" y="187"/><use href="#hrt" x="200" y="188"/><use href="#hrt" x="228" y="187"/><use href="#hrt" x="255" y="185"/>
+        </g>
+      </g>
+
+      <g class="tier" style="--k:3">
+        <path d="M140 92 v62 a60 12 0 0 0 120 0 v-62z" fill="url(#blueSide)"/>
+        <ellipse cx="200" cy="92" rx="60" ry="12" fill="url(#creamTop)" stroke="url(#gold)" stroke-width="1.5"/>
+        <path d="M140 132 a60 12 0 0 0 120 0" fill="none" stroke="url(#gold)" stroke-width="3"/>
+        <path d="M140 132 a60 12 0 0 0 120 0" fill="none" stroke="#fff4cf" stroke-width="4" stroke-dasharray="0 9" stroke-linecap="round"/>
+      </g>
+
+      <g id="candles" class="cand"></g>
+    </svg>
+  </div>
+
+  <div class="actions rise" style="--t:1.7s">
+    <button id="surpriseBtn" class="btn primary" type="button">Open Your Birthday Surprise</button>
+    <button id="blowBtn" class="btn ghost" type="button">💨 Blow the Candles</button>
+  </div>
+</main>
+
+<section class="overlay" id="overlay" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="msgTitle">
+  <div class="card">
+    <div class="big-heart" aria-hidden="true">❤️</div>
+    <h2 id="msgTitle" class="gold script">Happy Birthday, Baba Jaan!</h2>
+    <p class="msg" id="msg">May your life always be filled with happiness, health, love, and countless blessings. ❤️</p>
+    <p class="sign script">With all my love</p>
+    <div class="card-actions">
+      <button id="moreBtn" class="btn primary" type="button">Celebrate Again 🎉</button>
+      <button id="closeBtn" class="btn ghost" type="button">Back to the Cake</button>
+    </div>
+  </div>
+</section>
+
+<script src="app.js"></script>
+</body>
+</html>
